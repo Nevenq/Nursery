@@ -1,0 +1,48 @@
+.menu{
+    width: 100%;
+    background-color: #9ccc65;
+    height: 90px;
+    font-size: 23px;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0,0,0,.25)
+}
+.menu a{
+    padding: 0;
+    margin: 0;
+}
+.menu-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+.menu-container nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.menu-element{
+    height: 100%;
+}
+.menu-element a{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color:#fff;
+    width: 200px;
+    height: 100%;
+    line-height: calc(100px - 50%);
+}
+.menu-element a:hover{
+    font-size: 25px;
+    font-weight: bold;
+}
+.logo{
+    width: 223px;
+    height: 38px;
+    filter:hue-rotate(360deg);
+}
+div.number{
+    text-align: center;
+}
