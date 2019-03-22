@@ -2,7 +2,7 @@ import React from 'react'
 import img from '../images/sample-card-image.jpg'
 import './Card.css'
 
-const Card = ({src = img, name = 'Sample', text = 'Очень ласковый и любвеобильный котик.', sex = 'male', age = "12"}) => {
+const Card = ({src = img, name = 'Sample', text = 'Очень ласковый и любвеобильный котик.', sex = 'male', age = "1 год"}) => {
     return (
         <a href="#">
             <div className="card">
@@ -11,7 +11,7 @@ const Card = ({src = img, name = 'Sample', text = 'Очень ласковый �
                     <h3 className='animal-name'>{name}</h3>
                     <p className='animal-text'>{trimText(text)}</p>
                     <div className="animal-data" style={{color: colorText(sex)}}>
-                        {makeSex(sex)}
+                        {makeSex(sex)} <span className='age'>{age}</span>
                     </div>
                 </div>
             </div>

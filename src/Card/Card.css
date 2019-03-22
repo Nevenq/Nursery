@@ -1,10 +1,12 @@
 .card{
     max-width: 285px;
     max-height: 450px;
-    overflow: hidden;
     font-size: 24px;
     color: #555555;
     box-shadow: 0 0 9px rgba(0,0,0,.08);
+}
+a{
+    text-decoration: none;
 }
 .animal{
     max-width: 100%;
@@ -27,4 +29,7 @@
     text-align: left;
     font-size: 21px;
     font-weight: 900;
+}
+.age{
+    font-size: 20px;
 }
