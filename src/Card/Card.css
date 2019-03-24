@@ -1,35 +1,45 @@
 .card{
-    max-width: 285px;
-    max-height: 450px;
+    max-width: 240px;
+    max-height: 410px;
     font-size: 24px;
     color: #555555;
     box-shadow: 0 0 9px rgba(0,0,0,.08);
+    transition:.2s;
 }
+
 a{
     text-decoration: none;
 }
 .animal{
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .text-wrapper{
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 .animal-name{
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 .animal-text{
     text-align: left;
-    font-size: 18px;
-    font-weight: lighter;
-    max-height: 50px;
+    font-size: 14px;
+    max-height: 60px;
+    font-family: Roboto;
+    letter-spacing: 0.06em;
+    line-height: 19px;
+    margin-bottom: 17px;
 }
 .animal-data{
     text-align: left;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 900;
+    padding-bottom: 10px;
 }
 .age{
-    font-size: 20px;
+    font-size: 18px;
+}
+.card:hover{
+    opacity: .7;
 }

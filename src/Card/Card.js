@@ -1,8 +1,8 @@
 import React from 'react'
 import img from '../images/sample-card-image.jpg'
 import './Card.css'
-
-const Card = ({src = img, name = 'Sample', text = 'Очень ласковый и любвеобильный котик.', sex = 'male', age = "1 год"}) => {
+import 'font-awesome/css/font-awesome.min.css';
+const Card = ({src = img, name = 'Рыжик', text = 'Очень ласковый и любвеобильный котик. Любит греться на солнышке', sex = 'male', age = "1 год"}) => {
     return (
         <a href="#">
             <div className="card">
@@ -29,8 +29,8 @@ const makeSex = (sex) => {
 const colorText = (sex) => {
     return sex === 'male' ? '#2196f3' : '#f06292'
 }
-const trimText = (text, value = 40) => {
-    return text.length > value ? text.slice(0, value - 3) + '...' : text;
+const trimText = (text, value = 64) => {
+    return text.length >= value - 3 ? text.slice(0, value - 3).trim() + '...' : text;
 
 
 }
