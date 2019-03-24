@@ -1,45 +1,29 @@
 .menu{
+    width: 100%;
     background-color: #9ccc65;
     height: 90px;
-    font-size: 23px;
-    color: #fff;
-    box-shadow: 0 0 12px rgba(0,0,0,.25);
-
-}
-.menu a{
-    padding: 0;
-    margin: 0;
+    color:#fff;
 }
 .menu-container{
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    height: 100%;
     align-items: center;
-    width: 1500px;
-    margin: 0 auto;
-
+    overflow: hidden;
+    font-size: 18px;
 }
-.menu-container nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.logo{
+    width: 220px;
 }
 .menu-element{
-    overflow: hidden;
+    display: inline-block;
 }
-.menu-element a{
-    text-align: center;
-    display: block;
-    text-decoration: none;
+.menu-element a {
     color:#fff;
+    display: block;
     padding: 30px;
 }
 .menu-element a:hover{
-    font-size: 25px;
-    font-weight: bold;
-}
-.logo{
-    width: 223px;
-    height: 38px;
+    font-size: 19px;
+
 }

@@ -5,7 +5,7 @@ import logo from '../images/Питомник.svg'
 const Menu = () => {
     return (
         <div className="menu">
-            <div className="menu-container">
+            <div className="container menu-container">
                 <a href="#"><img src={logo} alt="logo" className="logo"/></a>
                 <nav>
                     <div className="menu-element"><a href="#">Главная</a></div>
