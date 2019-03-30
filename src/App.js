@@ -6,8 +6,16 @@ import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import About from "./components/About/About";
 import Rules from "./components/Rules/Rules";
+import {store} from './index'
+import {requestCards, requestCardsSuccess} from "./actionCreators/actionCreators";
+import {api} from "./";
 
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(requestCards());
+        store.dispatch((dispatch) =>api.getCards().then(cards => dispatch(requestCardsSuccess(cards))))
+    }
+
     render() {
         return (
             <BrowserRouter>

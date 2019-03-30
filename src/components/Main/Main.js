@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Main.css'
-import Card from "../Card/Card";
 import Filter from "../../containers/Filter";
 import Cards from "../../containers/Cards";
 

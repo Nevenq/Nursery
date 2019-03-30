@@ -17,31 +17,35 @@ const filterState = {
         reptiles :['Бигль', 'Немецкая овчарка', 'Самоедская лайка', 'Британская', 'Мейн-кун', 'Манчкин'].sort(),
         birds : ['Бигль', 'Немецкая овчарка', 'Самоедская лайка', 'Британская', 'Мейн-кун', 'Манчкин'].sort(),
         others:['Бигль', 'Немецкая овчарка', 'Самоедская лайка', 'Британская', 'Мейн-кун', 'Манчкин'].sort()},
-    selectedFilters : {cats : '',dogs:'',rodents : '',reptiles : '',birds:'',others : '',sex:'',age:''}
+    selectedFilters : {cats : '',dogs:'',rodents : '',reptiles : '',birds:'',others : '',sex:'',age:''},
+    changed : false
 };
 const FilterReducer = (state = filterState, action) => {
     switch (action.type) {
         case actionTypes.CHANGE_FILTER:
-            return {...state,selectedFilters: {...state.selectedFilters,[action.payload.name] : action.payload.value}};
+            return {...state,selectedFilters: {...state.selectedFilters,[action.payload.name] : action.payload.value},changed : true};
         case actionTypes.RESET_FILTER:
-            return {...state, selectedFilters: {}};
+            return {...state, selectedFilters: {cats : '',dogs:'',rodents : '',reptiles : '',birds:'',others : '',sex:'',age:''},changed: true};
         case actionTypes.SUBMIT_FILTER:
-            console.log(state)
+            return {...state,changed : false}
 
     }
     return state
 
 };
-const cardsState = [];
+const cardsState = {
+    cards : [],
+    status : 'loading'
+};
 
 const CardsReducer = (state = cardsState, action) => {
     switch (action.type) {
         case actionTypes.REQUEST_CARD:
-            return {...state};
+            return {...state,status:'loading'};
         case actionTypes.REQUEST_CARD_SUCCESS:
-            return [...action.cards];
+            return {cards : [...action.cards],status:'loaded'};
         case actionTypes.REQUEST_CARD_FAIL:
-            return {...state};
+            return {...state,status : 'failed'};
 
     }
     return state;

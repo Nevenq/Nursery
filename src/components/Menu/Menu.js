@@ -7,7 +7,7 @@ const Menu = () => {
     return (
             <div className="menu">
                 <div className="container menu-container">
-                    <a href="#"><img src={logo} alt="logo" className="logo"/></a>
+                    <Link to="/"><img src={logo} alt="logo" className="logo"/></Link>
                     <nav>
                         <div className="menu-element"><Link to="/">Главная</Link></div>
                         <div className="menu-element"><Link to="/about">О нас</Link></div>

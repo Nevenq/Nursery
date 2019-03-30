@@ -10,7 +10,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from 'redux-thunk'
 import Api from "./api/api";
 
-const store = createStore(reducer,composeWithDevTools(applyMiddleware(thunk)));
+export const store = createStore(reducer,composeWithDevTools(applyMiddleware(thunk)));
 export const api = new Api();
 
 ReactDOM.render(

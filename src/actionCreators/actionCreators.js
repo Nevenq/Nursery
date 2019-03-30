@@ -1,5 +1,4 @@
 import * as actionTypes from '../actionTypes/actionTypes'
-import Api from '../api/api'
 
 export const mainCard = () => ({
     type : actionTypes.MAIN_CARD,

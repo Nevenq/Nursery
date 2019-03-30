@@ -1,0 +1,63 @@
+.filter{
+    box-shadow: 0 0 9px rgba(0,0,0,.08);
+    padding-top: 20px;
+
+}
+.filter .filter-header{
+    font-size: 20px;
+    text-align: center;
+
+}
+.filter .label{
+    font-size: 16px;
+}
+.input-container{
+    text-align: left;
+    width: 190px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.input-container.center{
+    text-align: center;
+}
+.select{
+    margin-top: 5px;
+    margin-bottom: 13px;
+}
+.select > select{
+    width: 100%;
+    height: 28px;
+    font-size: 14px;
+    font-family: Roboto,sans-serif;
+    color:#555;
+    border:1px solid #d1d1d1;
+}
+.select > select:hover{
+    cursor: pointer;
+}
+.button{
+    font-family: Roboto,sans-serif;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    outline: 1px solid #9ccc65;
+    color: #9ccc65;
+    font-size: 18px;
+    border:none;
+    transition:.1s
+}
+.button.reset{
+    margin-top: 30px;
+}
+.button.submit{
+    background-color: #9ccc65;
+    color:#fff;
+}
+.button:hover{
+    cursor: pointer;
+}
+.button:hover{
+    opacity:0.85;
+}
