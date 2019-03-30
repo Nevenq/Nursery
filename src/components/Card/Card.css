@@ -13,6 +13,8 @@ a{
 .animal{
     max-width: 100%;
     margin-bottom: 10px;
+    min-height: 200px
+
 }
 .text-wrapper{
     margin-right: 15px;

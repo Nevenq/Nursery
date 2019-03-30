@@ -1,12 +1,13 @@
 import React from 'react'
-import img from '../images/sample-card-image.jpg'
+import img from './sample-card-image.jpg'
 import './Card.css'
 import 'font-awesome/css/font-awesome.min.css';
-const Card = ({src = img, name = 'Рыжик', text = 'Очень ласковый и любвеобильный котик. Любит греться на солнышке', sex = 'male', age = "1 год"}) => {
+
+const Card = ({src = img,animal= 'cats', name = 'Рыжик', text = 'Очень ласковый и любвеобильный котик. Любит греться на солнышке', sex = 'male', age = "1 год"}) => {
     return (
         <a href="#">
             <div className="card">
-                <img src={img} alt="animal" className='animal'/>
+                <img src={src} alt="animal" className='animal'/>
                 <div className="text-wrapper">
                     <h3 className='animal-name'>{name}</h3>
                     <p className='animal-text'>{trimText(text)}</p>
