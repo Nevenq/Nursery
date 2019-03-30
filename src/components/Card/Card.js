@@ -2,10 +2,11 @@ import React from 'react'
 import img from './sample-card-image.jpg'
 import './Card.css'
 import 'font-awesome/css/font-awesome.min.css';
+import {Link} from "react-router-dom";
 
-const Card = ({src = img,animal= 'cats', name = 'Рыжик', text = 'Очень ласковый и любвеобильный котик. Любит греться на солнышке', sex = 'male', age = "1 год"}) => {
+const Card = ({src = img, animal = 'cats', name = 'Рыжик', text = 'Очень ласковый и любвеобильный котик. Любит греться на солнышке', sex = 'male', age = "1 год", id}) => {
     return (
-        <a href="#">
+        <Link to={`/card/${id}`}>
             <div className="card">
                 <img src={src} alt="animal" className='animal'/>
                 <div className="text-wrapper">
@@ -16,8 +17,7 @@ const Card = ({src = img,animal= 'cats', name = 'Рыжик', text = 'Очень
                     </div>
                 </div>
             </div>
-        </a>
-
+        </Link>
     )
 };
 const makeSex = (sex) => {

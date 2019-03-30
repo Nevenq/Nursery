@@ -8,7 +8,7 @@ export const changeFilter = (value) => ({
     type : actionTypes.CHANGE_FILTER,
     payload : value,
 });
-export const resetFilter = () => ({
+export const resetFilter = (values) => ({
     type : actionTypes.RESET_FILTER,
 });
 export const submitFilter = () => ({

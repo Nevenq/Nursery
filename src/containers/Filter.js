@@ -20,7 +20,7 @@ export default connect(
         handleChange: (e) =>{
             dispatch(changeFilter({name : e.target.name, value : e.target.value}))
         },
-        handleReset : () =>{
+        handleReset : (value) =>{
             dispatch(resetFilter())
         },
         handleSubmit : (value) =>{

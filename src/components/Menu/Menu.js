@@ -1,6 +1,6 @@
 import React from 'react'
 import './Menu.css'
-import logo from './Питомник.svg'
+import logo from '../../images/Питомник.svg'
 import {Link} from "react-router-dom";
 
 const Menu = () => {

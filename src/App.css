@@ -1,8 +1,27 @@
-.container{
-  width: 78%;
-  margin: 0 auto;
-  text-align: center;
+.container {
+    width: 78%;
+    margin: 0 auto;
+    text-align: center;
 }
-#main{
-  color:#555;
+
+#main {
+    color: #555;
+}
+
+.footer {
+    margin-top: 100px;
+    width: 100%;
+    background-color: #9ccc65;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .25);
+}
+
+.footer .info {
+    margin-top: 15px;
 }
