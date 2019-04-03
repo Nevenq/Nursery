@@ -46,14 +46,26 @@ const CardsReducer = (state = cardsState, action) => {
             return {cards : [...action.cards],status:'loaded'};
         case actionTypes.REQUEST_CARD_FAIL:
             return {...state,status : 'failed'};
+        case actionTypes.GET_CARD:
+            return state.cards.find(card => card.id === action.id)
 
     }
     return state;
 
 };
+const animalPageState = {};
+const AnimalPageReducer = (state = animalPageState,action) =>{
+    switch (action.type) {
+        case actionTypes.ANIMAL_PAGE_SUCCESS:
+            return {...state,...action.card}
+
+    }
+    return state
+}
 
 export default combineReducers({
     main: MainReducer,
     filter: FilterReducer,
-    cards: CardsReducer
+    cards: CardsReducer,
+    animal : AnimalPageReducer,
 })

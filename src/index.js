@@ -9,13 +9,15 @@ import {Provider} from "react-redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from 'redux-thunk'
 import Api from "./api/api";
+import {BrowserRouter} from "react-router-dom";
 
-export const store = createStore(reducer,composeWithDevTools(applyMiddleware(thunk)));
+export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export const api = new Api();
-
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
     </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

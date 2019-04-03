@@ -1,0 +1,29 @@
+.animalPage{
+    margin-top: 30px;
+}
+.link{
+    text-align: left;
+    margin-bottom: 15px;
+}
+.menuLink{
+    font-size: 18px;
+    color: #555;
+    letter-spacing: 0;
+}
+.animalInfo{
+    display: flex;
+
+}
+.imgContainer{
+    width: 640px;
+    height: 480px;
+    padding: 10px;
+    box-shadow: 0 0 9px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgContainer img{
+    max-width: 100%;
+    max-height: 100%;
+}

@@ -26,3 +26,10 @@ export const requestCardsSuccess = (cards) =>{
 export const requestCardsFail = () =>{
     return {type : actionTypes.REQUEST_CARD_FAIL}
 };
+
+export const animalPageSuccess= (card) =>{
+    return {
+        type : actionTypes.ANIMAL_PAGE_SUCCESS,
+        card
+    }
+};

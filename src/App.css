@@ -7,7 +7,6 @@
 #main {
     color: #555;
 }
-
 .footer {
     margin-top: 100px;
     width: 100%;
@@ -23,5 +22,5 @@
 }
 
 .footer .info {
-    margin-top: 15px;
+    margin-top: 5px;
 }
