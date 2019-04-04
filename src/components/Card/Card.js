@@ -8,7 +8,7 @@ const Card = ({src = img, animal = 'cats', name = 'Рыжик', text = 'Очен
     return (
         <Link to={`/card/${id}`}>
             <div className="card">
-                <img src={src} alt="animal" className='animal'/>
+                <div className="animal" style={{backgroundImage:`url(${src})`}}/>
                 <div className="text-wrapper">
                     <h3 className='animal-name'>{name}</h3>
                     <p className='animal-text'>{trimText(text)}</p>
