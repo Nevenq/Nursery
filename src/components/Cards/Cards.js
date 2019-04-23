@@ -9,11 +9,10 @@ export class Cards extends React.Component {
 
         return (
             <div className='cards'>
-                {this.props.status === 'loaded'
-                    ? this.props.cards.map((card, i) => <Card key={i} src={card.src} age={card.age} name={card.name}
+                {this.props.cards.map((card, i) => <Card key={i} src={card.src} age={card.age} name={card.name}
                                                               sex={card.sex} text={card.text} id={card.id}
-                                                              animal={card.animal}/>)
-                    : <div className='loading'><i className="fa fa-spinner spinner" aria-hidden="true"/></div>}
+                                                              animal={card.animal}/>)}
+                {this.props.status === 'loading' && <div className='loading'><i className="fa fa-spinner spinner" aria-hidden="true"/></div>}
             </div>
 
         )

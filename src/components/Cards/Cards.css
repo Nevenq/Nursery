@@ -14,7 +14,7 @@
     width: 100%;
     height: 100%;
     font-size: 40px;
-    margin-top: 300px;
+    margin-top: 20px;
 }
 .loading .spinner {
     animation: loadingSpinner 1s infinite linear;

@@ -5,22 +5,26 @@ import './AnimalPage.css'
 export class AnimalPage extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props.history);
+        this.goBack = this.goBack.bind(this)
     }
 
     componentDidMount() {
         this.props.getInformation(this.props.match.params.id)
 
     }
+    goBack = () =>{
+        this.props.history.goBack()
+    }
 
     render() {
-        console.log(this.props)
         const animal = this.props.animal;
         return (
             <div className='container animalPage'>
                 <div className="link">
-                    <NavLink to='/' className='menuLink'>
+                    <div onClick={this.goBack} className='menuLink'>
                         <i className="fa fa-long-arrow-left arrow" aria-hidden="true"/> Назад
-                    </NavLink>
+                    </div>
                 </div>
                 <div className="animalInfo">
                     <div className="imgContainer">

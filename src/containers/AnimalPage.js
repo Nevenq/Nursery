@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import {AnimalPage} from "../components/AnimalPage/AnimalPage";
 import {api} from "../index";
 import {animalPageSuccess, getCard} from "../actionCreators/actionCreators";
+import {withRouter} from "react-router";
 export default connect(
     (state) =>({
         animal : state.animal
@@ -12,4 +13,4 @@ export default connect(
         }
 
     })
-)(AnimalPage)
+)(withRouter(AnimalPage))

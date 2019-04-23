@@ -1,22 +1,21 @@
 import React, {Component} from 'react';
 import './App.css';
 import Menu from "./components/Menu/Menu";
-import Main from "./components/Main/Main";
 import {BrowserRouter, Link} from "react-router-dom";
-import {Route, Switch} from "react-router";
+import {Route, Switch, withRouter} from "react-router";
 import About from "./components/About/About";
 import Rules from "./components/Rules/Rules";
 import {store} from './index'
-import {requestCards, requestCardsSuccess} from "./actionCreators/actionCreators";
+import {clearStore, requestCards, requestCardsSuccess} from "./actionCreators/actionCreators";
 import {api} from "./";
 import logo from './images/Питомник.svg'
 import {NoMatch} from "./components/NoMatch/NoMatch";
 import AnimalPage from "./containers/AnimalPage";
+import Main from "./containers/Main";
+import {Status} from "./Constants";
 
 class App extends Component {
     componentDidMount() {
-        store.dispatch(requestCards());
-        store.dispatch((dispatch) => api.getCards().then(cards => dispatch(requestCardsSuccess(cards))))
     }
 
     render() {
@@ -26,8 +25,24 @@ class App extends Component {
                     <Menu/>
                 </header>
                 <Switch>
-                    <Route exact path='/about' component={About}/>
-                    <Route exact path='/rules' component={Rules}/>
+                    <Route exact path='/about' render={() =>{
+                        {api.pageNumber = 0}
+                        {store.dispatch(clearStore())}
+                        return (
+                            <div>
+                                <About/>
+                            </div>
+                        )
+                    }}/>
+                    <Route exact path='/rules' render={() =>{
+                        {api.pageNumber = 0}
+                        {store.dispatch(clearStore())}
+                        return (
+                            <div>
+                                <Rules/>
+                            </div>
+                        )
+                    }}/>
                     <Route exact path='/card/:id' component={AnimalPage}/>
                     <Route exact path='/:params?' component={Main}/>
                     <Route component={NoMatch}/>
@@ -44,4 +59,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withRouter(App);
