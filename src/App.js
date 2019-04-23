@@ -26,10 +26,10 @@ class App extends Component {
                     <Menu/>
                 </header>
                 <Switch>
-                    <Route exact path='/:id?' component={Main}/>
                     <Route exact path='/about' component={About}/>
                     <Route exact path='/rules' component={Rules}/>
                     <Route exact path='/card/:id' component={AnimalPage}/>
+                    <Route exact path='/:params?' component={Main}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <footer className='footer'>

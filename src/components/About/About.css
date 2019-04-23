@@ -1,0 +1,44 @@
+.nursery{
+    color: #555;
+}
+.nursery-name{
+    text-align: left;
+    margin: 20px 0 12px 0;
+}
+.nursery-info{
+    display: flex;
+}
+.nursery-contacts{
+    min-width: 425px;
+    height: 380px;
+    box-shadow: 0 0 9px rgba(0,0,0,.08);
+    text-align: left;
+    padding: 20px 10px 0 20px;
+    margin-left: 10px;
+}
+.nursery-contacts h3{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.nursery-stat{
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+.nursery-contacts .stats-label{
+    width: 150px;
+}
+.nursery-description{
+    box-shadow: 0 0 9px rgba(0,0,0,.08);
+    margin-top: 10px;
+    text-align: left;
+    padding: 20px;
+}
+.nursery-description h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.nursery-description p{
+    font-size: 16px;
+    line-height: 22px;
+}
