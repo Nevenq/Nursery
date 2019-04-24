@@ -22,10 +22,17 @@ export const requestCards = () =>{
 export const requestCardsSuccess = (cards) =>{
     return {type : actionTypes.REQUEST_CARD_SUCCESS,cards}
 };
+export const filterCardsSuccess = (cards) =>{
+    return {type : actionTypes.FILTER_CARD_SUCCESS,cards}
+};
 
 export const requestCardsFail = () =>{
     return {type : actionTypes.REQUEST_CARD_FAIL}
 };
+export const clearStore = () =>{
+    return {type : actionTypes.CLEAR_STATE}
+};
+export const clearCards = () =>({type : actionTypes.CLEAR_CARDS});
 
 export const animalPageSuccess= (card) =>{
     return {

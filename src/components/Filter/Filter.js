@@ -1,5 +1,6 @@
 import React from 'react'
 import './Filter.css'
+import {withRouter} from "react-router";
 const Filter = ({filters = [],handleChange,selected,handleReset,handleSubmit,changed}) => {
     return (
         <div className="filter" >

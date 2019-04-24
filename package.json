@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "jquery": "^3.4.0",
+    "jscroll": "^2.4.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-image-slider": "^0.1.0",

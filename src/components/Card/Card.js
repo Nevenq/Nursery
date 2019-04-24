@@ -36,4 +36,3 @@ const trimText = (text, value = 64) => {
 
 }
 export default Card;
-export {Card};

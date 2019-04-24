@@ -43,11 +43,15 @@ const CardsReducer = (state = cardsState, action) => {
         case actionTypes.REQUEST_CARD:
             return {...state,status:'loading'};
         case actionTypes.REQUEST_CARD_SUCCESS:
-            return {cards : [...action.cards],status:'loaded'};
+            return {cards : [...state.cards,...action.cards],status:'loaded'};
+        case actionTypes.FILTER_CARD_SUCCESS:
+            return {cards : [...action.cards],status:'loaded'}
         case actionTypes.REQUEST_CARD_FAIL:
             return {...state,status : 'failed'};
         case actionTypes.GET_CARD:
             return state.cards.find(card => card.id === action.id)
+        case actionTypes.CLEAR_CARDS:
+            return {...state,cards :[]}
 
     }
     return state;
@@ -63,9 +67,17 @@ const AnimalPageReducer = (state = animalPageState,action) =>{
     return state
 }
 
-export default combineReducers({
+const reducers =  combineReducers({
     main: MainReducer,
     filter: FilterReducer,
     cards: CardsReducer,
     animal : AnimalPageReducer,
-})
+});
+export default (state,action) =>{
+    switch (action.type) {
+        case actionTypes.CLEAR_STATE:
+            state = undefined;
+
+    }
+    return reducers(state,action)
+}

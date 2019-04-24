@@ -9,6 +9,7 @@
     font-size: 18px;
     color: #555;
     letter-spacing: 0;
+    cursor: pointer;
 }
 .animalInfo{
     display: flex;
