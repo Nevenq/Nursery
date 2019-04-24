@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edb52cdc-7d37-41db-8c0c-b0e20939c346" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/AnimalPage/AnimalPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnimalPage/AnimalPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,6 +17,7 @@
     <session id="1732235022">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -315,12 +316,12 @@
       <workItem from="1553948780275" duration="19058000" />
       <workItem from="1554026761766" duration="10776000" />
       <workItem from="1554309476387" duration="1248000" />
-      <workItem from="1554349243384" duration="14594000" />
+      <workItem from="1554349243384" duration="15168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97742000" />
+    <option name="totallyTimeSpent" value="98316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
