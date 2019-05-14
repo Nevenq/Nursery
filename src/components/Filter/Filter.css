@@ -1,43 +1,55 @@
-.filter{
-    box-shadow: 0 0 9px rgba(0,0,0,.08);
+.filter {
+    box-shadow: 0 0 9px rgba(0, 0, 0, .08);
     padding-top: 20px;
 
 }
-.filter .filter-header{
+
+.filter .filter-header {
     font-size: 20px;
     text-align: center;
 
 }
-.filter .label{
+
+.filter .label {
+    display: block;
     font-size: 16px;
 }
-.input-container{
+.filter .label:hover{
+    cursor: pointer;
+}
+
+.input-container {
     text-align: left;
     width: 190px;
     margin-top: 10px;
     margin-right: 20px;
     margin-left: 20px;
 }
-.input-container.center{
+
+.input-container.center {
     text-align: center;
 }
-.select{
+
+.select {
     margin-top: 5px;
     margin-bottom: 13px;
 }
-.select > select{
+
+.select > select {
     width: 100%;
     height: 28px;
     font-size: 14px;
-    font-family: Roboto,sans-serif;
-    color:#555;
-    border:1px solid #d1d1d1;
+    font-family: Roboto, sans-serif;
+    color: #555;
+    border: 1px solid #d1d1d1;
 }
-.select > select:hover{
+
+.select > select:hover {
     cursor: pointer;
 }
-.button{
-    font-family: Roboto,sans-serif;
+
+.button {
+    font-family: Roboto, sans-serif;
     display: block;
     width: 100%;
     height: 50px;
@@ -45,19 +57,71 @@
     outline: 1px solid #9ccc65;
     color: #9ccc65;
     font-size: 18px;
-    border:none;
-    transition:.1s
+    border: none;
+    transition: .1s
 }
-.button.reset{
+
+.button.reset {
     margin-top: 30px;
 }
-.button.submit{
+
+.button.submit {
     background-color: #9ccc65;
-    color:#fff;
+    color: #fff;
 }
-.button:hover{
+
+.button:hover {
     cursor: pointer;
 }
-.button:hover{
-    opacity:0.85;
+
+.button:hover {
+    opacity: 0.85;
+}
+
+
+.chkBox {
+    font-size: 14px;
+
+}
+div.active{
+    transition-delay: 0s;
+    transition-duration: .3s;
+    max-height: 200px;
+}
+.boxes{
+    transition-delay: 0s;
+    transition-duration: .3s;
+    overflow-y: hidden;
+    max-height : 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.inputs{
+    position: relative;
+}
+.arrow{
+    display: inline-block;
+    position: absolute;
+    right: 9px;
+}
+.opened.arrow::before{
+    transform: rotate(90deg);
+    opacity: 0;
+
+}
+.arrow::after{
+    content: '';
+    position: absolute;
+    background-color: #555;
+    width: 12px;
+    height: 2px;
+    transform: translate(-5px,5px);
+}
+.arrow::before{
+    transition: all .3s;
+    content: '';
+    position: absolute;
+    background-color: #555;
+    width: 2px;
+    height: 12px;
 }

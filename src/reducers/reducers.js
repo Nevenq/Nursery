@@ -23,7 +23,14 @@ const filterState = {
 const FilterReducer = (state = filterState, action) => {
     switch (action.type) {
         case actionTypes.CHANGE_FILTER:
-            return {...state,selectedFilters: {...state.selectedFilters,[action.payload.name] : action.payload.value},changed : true};
+            let values = state.selectedFilters[action.payload.name];
+            console.log(action.payload.value)
+            if(values.indexOf(action.payload.value) === -1){
+                values+=` ${action.payload.value} `;
+            } else{
+                values = values.slice(0,values.indexOf(action.payload.value) + values.slice(values.indexOf(action.payload.value) + action.payload.value.length));
+            }
+            return {...state,selectedFilters: {...state.selectedFilters,[action.payload.name] : values.trim()},changed : true};
         case actionTypes.RESET_FILTER:
             return {...state, selectedFilters: {cats : '',dogs:'',rodents : '',reptiles : '',birds:'',others : '',sex:'',age:''},changed: true};
         case actionTypes.SUBMIT_FILTER:
