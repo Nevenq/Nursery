@@ -3,11 +3,16 @@
     margin: 0 auto;
     text-align: center;
 }
-
+div.App{
+    position: relative;
+    min-height : 100vh;
+}
 #main {
     color: #555;
 }
 .footer {
+    position: relative;
+    z-index: 10000;
     margin-top: 100px;
     width: 100%;
     background-color: #9ccc65;
@@ -19,8 +24,28 @@
     text-align: center;
     color: #fff;
     box-shadow: 0 0 12px rgba(0, 0, 0, .25);
+
 }
+
+
 
 .footer .info {
     margin-top: 5px;
+}
+.anchor {
+    position: fixed;
+    height: 100%;
+    width: 100px;
+    right: 0;
+    transition: all .2s;
+    opacity: 0;
+
+}
+.anchor a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.anchor:hover{
+    background-color: #efefef
 }

@@ -22,7 +22,9 @@ export default withRouter(connect(
             console.log(e.currentTarget)
             dispatch(changeFilter({name : e.currentTarget.dataset.name, value : e.target.value}))
         },
-        handleReset : (value) =>{
+        handleReset : (e) =>{
+            e.target.parentNode.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false)
+
             dispatch(resetFilter())
         },
         handleSubmit : (value) =>{

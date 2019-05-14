@@ -109,19 +109,23 @@ div.active{
     opacity: 0;
 
 }
-.arrow::after{
+.filter .arrow{
+    position: absolute;
+    top: 7px;
+}
+.filter .arrow::after{
     content: '';
     position: absolute;
-    background-color: #555;
-    width: 12px;
+    background-color: #777;
+    width: 10px;
     height: 2px;
-    transform: translate(-5px,5px);
+    transform: translate(-4px,4px);
 }
-.arrow::before{
+.filter .arrow::before{
     transition: all .3s;
     content: '';
     position: absolute;
-    background-color: #555;
+    background-color: #777;
     width: 2px;
-    height: 12px;
+    height: 10px;
 }
