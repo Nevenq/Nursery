@@ -25,9 +25,9 @@ export default withRouter(connect(
             dispatch(resetFilter())
         },
         handleSubmit : (value) =>{
-            dispatch(clearCards())
+            dispatch(clearCards());
             dispatch(requestCards());
-            props.history.push('/')
+            props.history.push('/');
             if(value.length > 0)
                 dispatch(() => api.filterCards(JSON.stringify(value.reduce((a,b) => ({...a,[b[0]]:b[1]}),{}))).then(cards => dispatch(filterCardsSuccess(cards))).then(dispatch(submitFilter())));
             else{
