@@ -30,6 +30,7 @@ class Main extends Component {
 
     }
     handleScroll = (e) =>{
+        if(!e.target.body) return;
         this.setState({scroll : window.pageYOffset + document.documentElement.clientHeight});
         if(Math.abs(this.state.scroll - e.target.body.clientHeight) < 30 && api.status !== 'loading' && api.pageNumber !== -1){
             api.status = Status.loading;

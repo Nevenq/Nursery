@@ -1,63 +1,89 @@
 import React from 'react'
 import './Filter.css'
 import {withRouter} from "react-router";
-const Filter = ({filters = [],handleChange,selected,handleReset,handleSubmit,changed}) => {
+import $ from 'jquery'
+
+const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit, changed}) => {
     return (
-        <div className="filter" >
+        <div className="filter">
+
             <h3 className='filter-header'>Животные</h3>
             <div className="input-container">
-                <label htmlFor="cats" className='label'>Кошки</label>
-                <div className="select">
-                    <select name="cats" id="cats" value={selected.cats} onChange={handleChange}>
-                        <option value="">Выберите породу</option>
-                        {filters.cats.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option  value="Другое">Другое</option>
-                    </select>
+                <div className="inputs" data-name='cats' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Кошки
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.cats.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div className="inputs" data-name='dogs' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Собаки
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.dogs.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                <label htmlFor="dogs" className='label'>Собаки</label>
-                <div className="select">
-                    <select name="dogs" id="dogs" value={selected.dogs} onChange={handleChange}>
-                        <option value="">Выберите породу</option>
-                        {filters.dogs.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option value="Другое">Другое</option>
-                    </select>
+                <div className="inputs" data-name='rodents' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Грызуны
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.rodents.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                <label htmlFor="rodents" className='label'>Грызуны</label>
-                <div className="select">
-                    <select name="rodents" id="rodents" value={selected.rodents} onChange={handleChange}>
-                        <option value="">Выберите вид</option>
-                        {filters.rodents.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option value="Другое">Другое</option>
-                    </select>
+                <div className="inputs" data-name='birds' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Птицы
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.birds.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                <label htmlFor="birds" className='label'>Птицы</label>
-                <div className="select">
-                    <select name="birds" id="birds" value={selected.birds} onChange={handleChange}>
-                        <option value="">Выберите вид</option>
-                        {filters.birds.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option value="Другое">Другое</option>
-                    </select>
+                <div className="inputs" data-name='reptiles' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Рептилии
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.reptiles.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                <label htmlFor="reptiles" className='label'>Рептилии</label>
-                <div className="select">
-                    <select name="reptiles" id="reptiles" value={selected.reptiles} onChange={handleChange}>
-                        <option value="">Выберите вид</option>
-                        {filters.reptiles.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option value="Другое">Другое</option>
-                    </select>
-                </div>
-
-                <label htmlFor="others" className='label'>Другие</label>
-                <div className="select">
-                    <select name="others" id="others" value={selected.others} onChange={handleChange}>
-                        <option value="">Выберите вид</option>
-                        {filters.others.map(a => <option key={a} value={a}>{a}</option>)}
-                        <option value="Другое">Другое</option>
-                    </select>
+                <div className="inputs" data-name='others' onChange={handleChange}>
+                    <div className='label' onClick={handleSelect}>Другие
+                        <div className="arrow"></div>
+                    </div>
+                    <div className="boxes">
+                        {filters.others.map(a =>
+                            <div className='chkBox'>
+                                <label><input type='checkbox' key={a} value={a}/>{a}</label>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <h3 className='filter-header' style={{marginTop: '22px'}}>Пол</h3>
@@ -79,9 +105,23 @@ const Filter = ({filters = [],handleChange,selected,handleReset,handleSubmit,cha
             </div>
 
             <input type="button" value='Сбросить' className='button reset' onClick={handleReset}/>
-            <input type="submit" value='Показать' className='button submit' onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}/>
+            <input type="submit" value='Показать' className='button submit'
+                   onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}/>
         </div>);
 }
-
+const handleSelect = (e) => {
+    let elem = e.target.parentNode.querySelector('.boxes');
+    if (elem.classList.contains('active')) {
+        elem.classList.remove('active');
+        e.target.querySelector('.arrow').classList.remove('opened')
+    } else {
+        elem.classList.add('active')
+        e.target.querySelector('.arrow').classList.add('opened')
+    }
+    if (200 / elem.children.length < 20) {
+        elem.style.overflowY = 'scroll'
+    }
+    console.log()
+}
 
 export default Filter

@@ -19,7 +19,8 @@ export default withRouter(connect(
     }),
     (dispatch,props) =>({
         handleChange: (e) =>{
-            dispatch(changeFilter({name : e.target.name, value : e.target.value}))
+            console.log(e.currentTarget)
+            dispatch(changeFilter({name : e.currentTarget.dataset.name, value : e.target.value}))
         },
         handleReset : (value) =>{
             dispatch(resetFilter())
