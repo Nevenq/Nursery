@@ -18,6 +18,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другая</label>
+                        </div>
                     </div>
                 </div>
                 <div className="inputs" data-name='dogs' onChange={handleChange}>
@@ -30,6 +33,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другая</label>
+                        </div>
                     </div>
                 </div>
 
@@ -43,6 +49,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другие</label>
+                        </div>
                     </div>
                 </div>
 
@@ -56,6 +65,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другие</label>
+                        </div>
                     </div>
                 </div>
 
@@ -69,6 +81,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другие</label>
+                        </div>
                     </div>
                 </div>
 
@@ -82,6 +97,9 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                                 <label><input type='checkbox' key={a} value={a}/>{a}</label>
                             </div>
                         )}
+                        <div className='chkBox'>
+                            <label><input type='checkbox' key='other' value='other'/>Другие</label>
+                        </div>
                     </div>
                 </div>
 
@@ -105,7 +123,7 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
 
             <input type="button" value='Сбросить' className='button reset' onClick={handleReset}/>
             <input type="submit" value='Показать' className='button submit'
-                   onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}/>
+                   /*onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}*//>
         </div>);
 }
 const handleSelect = (e) => {
@@ -118,7 +136,7 @@ const handleSelect = (e) => {
         elem.classList.add('active')
         e.target.querySelector('.arrow').classList.add('opened')
     }
-    if (elem.children.length > 20) {
+    if (elem.children.length > 8) {
         elem.style.overflowY = 'scroll'
     }
     console.log()

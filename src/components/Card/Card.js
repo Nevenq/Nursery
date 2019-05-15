@@ -11,7 +11,7 @@ const Card = ({src = img, animal = 'cats', name = 'Рыжик', text = 'Очен
             <div className="card">
                 <div className="animal" style={getSrc(src)}/>
                 <div className="text-wrapper">
-                    <h3 className='animal-name'>{name}</h3>
+                    <h3 className='animal-name'>{trimText(name,15)}</h3>
                     <p className='animal-text'>{trimText(text)}</p>
                     <div className="animal-data" style={{color: colorText(sex)}}>
                         {makeSex(sex)} <span className='age'>{makeAge(bDate)}</span>
@@ -41,14 +41,21 @@ const makeSex = (sex) => {
 };
 const makeAge = (bDate) =>{
     let birthDate = new Date(bDate);
-    let date = Math.abs(new Date() - birthDate);
-    let month = date/1000/60/60/24/28;
-    let year = month/12;
-    if(month >= 0 && month <= 6 && year < 1) return `меньше 6 мес.`;
-    if(month > 6 && month <= 12 && year < 1) return 'от 6 мес. до года';
-    return `${parseInt(year)} год ${month - year*12 > 0 ? `${parseInt(month - year*12)}` :'' }`
+    let diffDate = new Date() - birthDate;
+    let day = diffDate/1000/60/60/24;
+    console.log(day)
+    let year = parseInt(day/365);
+    day -=year*365;
+    let month = parseInt(day/28);
+    day = parseInt(day - month*28);
+    let strYear = year >= 1 ? `${year} год ` : '';
+    let strMonth = month > 0 ? `${month} мес. `: '';
+    let strDay = day > 0 ? `${day} дн. ` : '';
+    console.log(day)
+    if(!strYear && !strMonth) return 'Не указан'
+    return strYear + strMonth;
 
-}
+};
 const colorText = (sex) => {
     return sex === 0 ? '#2196f3' : '#f06292'
 };

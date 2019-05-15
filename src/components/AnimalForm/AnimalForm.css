@@ -68,9 +68,9 @@
 }
 .form .input-container textarea{
     border: 1px solid #d1d1d1;
+    width: 190px;
 }
 .form .input-container input{
-    padding-left: 5px;
 }
 .form .input .submit{
     margin-top: 50px;

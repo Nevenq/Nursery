@@ -34,6 +34,8 @@ a{
     letter-spacing: 0.06em;
     line-height: 19px;
     margin-bottom: 17px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 .animal-data{
     position: absolute;

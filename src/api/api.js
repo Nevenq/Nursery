@@ -1,6 +1,9 @@
 import {cards} from "./Cards";
 import {store} from '../index'
 import {Status} from "../Constants";
+import React from "react";
+import {Redirect} from "react-router";
+import {NoMatch} from "../components/NoMatch/NoMatch";
 
 export default class Api {
     constructor(config) {
@@ -21,7 +24,9 @@ export default class Api {
     }
 
     getCard(id) {
-        return fetch(`${this.url}/animal/${id}`).then(response => response.json())
+        return fetch(`${this.url}/animal/${id}`)
+            .then(response => response.json())
+            .catch(err => {})
     }
 
     addCard(card) {

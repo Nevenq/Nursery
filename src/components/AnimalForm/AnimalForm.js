@@ -67,7 +67,7 @@ class AnimalForm extends Component {
                             <label htmlFor="selectAnimalType">Вид:</label>
                             <div className="input">
                                 <select name="animalType" id="selectAnimalType" required={true}>
-                                    {['Кошка', 'Собака', 'Грызун', 'Птица', 'Рептилия', 'Другое'].map(v => <option
+                                    {['Кошка', 'Собака', 'Грызун', 'Птица', 'Рептилия, амфибия', 'Другое'].map(v => <option
                                         value={v}>{v}</option>)}
                                 </select>
                             </div>
@@ -82,8 +82,8 @@ class AnimalForm extends Component {
                             <label htmlFor='Sex'>Пол:</label>
                             <div className="input">
                                 <select name="sex" id="Sex">
-                                    <option value="0">Мужской</option>
-                                    <option value="1">Женский</option>
+                                    <option value="0">Мальчик</option>
+                                    <option value="1">Девочка</option>
                                 </select>
                             </div>
                         </div>
@@ -117,12 +117,9 @@ class AnimalForm extends Component {
 }
 const getMaxDate = () =>{
     let year = new Date().getFullYear()
-    console.log(year)
     let month = new Date().getMonth() + 1
-    console.log(month)
     month = month < 9 ? '0' + month : month;
     let day = new Date().getDate();
-    console.log(day)
     day = day < 9 ? '0' + day : day;
     return `${year}-${month}-${day}`
 }

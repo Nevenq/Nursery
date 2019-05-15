@@ -3,11 +3,11 @@ import {Link, NavLink} from "react-router-dom";
 import img from '../Card/sample-card-image.jpg'
 import './AnimalPage.css'
 import {api} from '../../index'
+import {Redirect} from "react-router";
 
 export class AnimalPage extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.history);
         this.goBack = this.goBack.bind(this)
         this.getSrc = this.getSrc.bind(this);
     }
@@ -16,18 +16,19 @@ export class AnimalPage extends React.Component {
         this.props.getInformation(this.props.match.params.id)
 
     }
+    componentDidCatch(err,info){
+
+    }
     goBack = () =>{
         this.props.history.goBack()
     }
     getSrc = () =>{
         if(!this.props.animal || !this.props.animal.wayToFiles || this.props.animal.wayToFiles.length < 1) return img;
-        console.log(`${api.url}/files/${this.props.animal.wayToFiles[0]}`);
         return `${api.url}/files/${this.props.animal.wayToFiles[0]}`
     }
 
     render() {
         const animal = this.props.animal;
-        console.log(animal)
         return (
             <div className='container animalPage'>
                 <div className="link">
@@ -92,7 +93,6 @@ const makeAge = (bDate) =>{
     let birthDate = new Date(bDate);
     let diffDate = new Date() - birthDate;
     let day = diffDate/1000/60/60/24;
-    console.log(day)
     let year = parseInt(day/365);
     day -=year*365;
     let month = parseInt(day/28);
@@ -100,7 +100,6 @@ const makeAge = (bDate) =>{
     let strYear = year >= 1 ? `${year} год ` : '';
     let strMonth = month > 0 ? `${month}мес `: '';
     let strDay = day > 0 ? `${day} дн. ` : '';
-    console.log(day)
     if(!strYear && !strMonth && !strDay) return 'Не указан'
     return strYear + strMonth + strDay;
 }

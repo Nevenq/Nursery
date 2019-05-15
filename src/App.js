@@ -59,6 +59,7 @@ class App extends Component {
                 </header>
                 <div className="app-main">
                     <Switch>
+                        <Route exact path='/404' component={NoMatch}/>
                         <Route exact path='/about' render={() => {
                             return (
                                 <div>
@@ -75,7 +76,6 @@ class App extends Component {
                         }}/>
                         <Route exact path='/card/:id' component={AnimalPage}/>
                         <Route exact path='/:params?' component={Main}/>
-                        <Route component={NoMatch}/>
                     </Switch>
                 </div>
 
