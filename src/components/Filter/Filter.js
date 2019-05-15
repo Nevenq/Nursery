@@ -60,7 +60,7 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
                 </div>
 
                 <div className="inputs" data-name='reptiles' onChange={handleChange}>
-                    <div className='label' onClick={handleSelect}>Рептилии
+                    <div className='label' onClick={handleSelect}>Рептилии, амфибии
                         <div className="arrow"/>
                     </div>
                     <div className="boxes">

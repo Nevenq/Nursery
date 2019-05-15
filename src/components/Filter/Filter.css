@@ -111,7 +111,7 @@ div.active{
 }
 .filter .arrow{
     position: absolute;
-    top: 7px;
+    top: 5px;
 }
 .filter .arrow::after{
     content: '';
