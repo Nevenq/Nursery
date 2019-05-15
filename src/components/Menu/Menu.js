@@ -2,6 +2,7 @@ import React from 'react'
 import './Menu.css'
 import logo from '../../images/Питомник.svg'
 import {Link} from "react-router-dom";
+import $ from 'jquery'
 
 const Menu = () => {
     return (
@@ -13,10 +14,15 @@ const Menu = () => {
                         <div className="menu-element"><Link to="/about">О нас</Link></div>
                         <div className="menu-element"><Link to="/rules">Правила</Link></div>
                     </nav>
-                    <div className="number">+7 900 000 00 00</div>
+                    <div className="anchor-form" onClick={handleClick}>Добавить животного</div>
                 </div>
             </div>
     )
 };
+const handleClick = () =>{
+    $('.form').fadeIn(300,() => document.body.style.overflow = 'hidden');
+
+
+}
 export default Menu
 export {Menu}

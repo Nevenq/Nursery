@@ -14,6 +14,7 @@ import {NoMatch} from "./components/NoMatch/NoMatch";
 import AnimalPage from "./containers/AnimalPage";
 import Main from "./containers/Main";
 import {Status} from "./Constants";
+import AnimalForm from "./components/AnimalForm/AnimalForm";
 
 class App extends Component {
     constructor(props) {
@@ -23,15 +24,15 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const app = ReactDOM.findDOMNode(this.myref);
-        console.log(getComputedStyle(app).height)
+        console.log(this.props)
+        store.dispatch(requestCards());
+        store.dispatch((dispatch) => api.getCards().then(cards => dispatch(requestCardsSuccess(cards))).then(api.status = Status.ready));
         window.addEventListener('scroll', this.handleScroll);
         document.querySelector('.anchor').addEventListener('click',this.handleClick)
 
     }
 
     componentWillUnmount() {
-        const app = ReactDOM.findDOMNode(this.myref);
         window.removeEventListener('scroll', this.handleScroll)
         document.querySelector('.anchor').removeEventListener('click',this.handleClick)
     }
@@ -51,42 +52,33 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App" ref={r => this.myref = r}>
-                <div className="anchor" onClick={this.handleClick}>1</div>
+            <div className="App">
+                <div className="anchor" onClick={this.handleClick}><span>Наверх</span></div>
                 <header id='header'>
                     <Menu/>
                 </header>
-                <Switch>
-                    <Route exact path='/about' render={() => {
-                        {
-                            api.pageNumber = 0
-                        }
-                        {
-                            store.dispatch(clearStore())
-                        }
-                        return (
-                            <div>
-                                <About/>
-                            </div>
-                        )
-                    }}/>
-                    <Route exact path='/rules' render={() => {
-                        {
-                            api.pageNumber = 0
-                        }
-                        {
-                            store.dispatch(clearStore())
-                        }
-                        return (
-                            <div>
-                                <Rules/>
-                            </div>
-                        )
-                    }}/>
-                    <Route exact path='/card/:id' component={AnimalPage}/>
-                    <Route exact path='/:params?' component={Main}/>
-                    <Route component={NoMatch}/>
-                </Switch>
+                <div className="app-main">
+                    <Switch>
+                        <Route exact path='/about' render={() => {
+                            return (
+                                <div>
+                                    <About/>
+                                </div>
+                            )
+                        }}/>
+                        <Route exact path='/rules' render={() => {
+                            return (
+                                <div>
+                                    <Rules/>
+                                </div>
+                            )
+                        }}/>
+                        <Route exact path='/card/:id' component={AnimalPage}/>
+                        <Route exact path='/:params?' component={Main}/>
+                        <Route component={NoMatch}/>
+                    </Switch>
+                </div>
+
                 <footer className='footer'>
                     <Link to='/'><img src={logo} alt="logo" className="logo"/></Link>
                     <div className="info">
@@ -94,6 +86,7 @@ class App extends Component {
                         <p>г. Екатеринбург, ул. Мира, 29</p>
                     </div>
                 </footer>
+                <AnimalForm/>
             </div>
         );
     }

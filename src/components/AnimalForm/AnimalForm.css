@@ -1,0 +1,77 @@
+.animalForm{
+    position: absolute;
+    transform: translate(calc(50vw - 50%),calc(50vh - 50%));
+    margin: 0 auto;
+    top: 0;
+    z-index: 1000000;
+    background-color: #fff;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form .form-cross{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.form{
+    position: fixed;
+    display: none;
+    z-index: 50000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.formBack{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    width: 100vw;
+    height: 100vh;
+
+
+}
+#formDesc{
+    resize: none;
+}
+.form{
+    margin: 0;
+    padding: 0;
+}
+.input{
+    margin: 0;
+}
+.form .input-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.form .input-container label{
+    display: inline-block;
+    width: 200px;
+    font-size: 18px;
+}
+.form .input-container input,
+.form .input-container select{
+    width: 190px;
+    height: 28px;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: #555;
+    border: 1px solid #d1d1d1;
+
+}
+.form .input-container textarea{
+    border: 1px solid #d1d1d1;
+}
+.form .input-container input{
+    padding-left: 5px;
+}
+.form .input .submit{
+    margin-top: 50px;
+}

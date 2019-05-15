@@ -10,10 +10,13 @@ div.App{
 #main {
     color: #555;
 }
+.app-main{
+    min-height: calc(100vh - 180px);
+}
 .footer {
     position: relative;
-    z-index: 10000;
     margin-top: 100px;
+    z-index: 10000;
     width: 100%;
     background-color: #9ccc65;
     height: 120px;
@@ -24,15 +27,19 @@ div.App{
     text-align: center;
     color: #fff;
     box-shadow: 0 0 12px rgba(0, 0, 0, .25);
+    bottom: 0;
 
 }
-
+.App{
+    min-height: 100vh;
+}
 
 
 .footer .info {
     margin-top: 5px;
 }
 .anchor {
+    text-align: center;
     position: fixed;
     height: 100%;
     width: 100px;
@@ -48,4 +55,36 @@ div.App{
 }
 .anchor:hover{
     background-color: #efefef
+}
+.anchor::before{
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #666;
+    transform-origin: right;
+    transform: rotate(-45deg);
+    justify-content: center;
+    align-items: center;
+}
+.anchor::after{
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 2px;
+    transform-origin: left;
+    transform: rotate(45deg);
+    background-color: #666;
+}
+.anchor span{
+    position: absolute;
+    font-size: 13px;
+    text-align: center;
+    top: 35px;
+    left: 27px;
+    transition: opacity .1s;
+    opacity: 0;
+}
+.anchor:hover span{
+    opacity: 1;
 }
