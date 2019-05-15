@@ -12,7 +12,7 @@ import Api from "./api/api";
 import {BrowserRouter} from "react-router-dom";
 
 export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-export const api = new Api();
+export const api = new Api('https://localhost:5001');
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

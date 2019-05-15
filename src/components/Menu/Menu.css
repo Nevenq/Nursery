@@ -3,6 +3,8 @@
     height: 80px;
     color:#fff;
     box-shadow: 0 0 12px rgba(0,0,0,.25);
+    position: relative;
+    z-index: 10000;
 }
 .menu-container{
     height: 100%;
@@ -29,4 +31,7 @@
     background-color: #f1f8e9;
     color:#9ccc65;
 
+}
+.anchor-form{
+    cursor: pointer;
 }

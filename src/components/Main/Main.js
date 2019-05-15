@@ -19,9 +19,8 @@ class Main extends Component {
         this.handleScroll = this.handleScroll.bind(this);
     }
     componentDidMount() {
-        api.status = Status.loading;
-        store.dispatch(requestCards());
-        store.dispatch((dispatch) => api.getCards().then(cards => dispatch(requestCardsSuccess(cards))).then(api.status = Status.ready));
+        if(api.pageNumber > 1)
+            this.props.history.push(`?pageNumber=${api.pageNumber}`)
         window.addEventListener('scroll',this.handleScroll,true)
 
     }
@@ -33,6 +32,7 @@ class Main extends Component {
         if(!e.target.body) return;
         this.setState({scroll : window.pageYOffset + document.documentElement.clientHeight});
         if(Math.abs(this.state.scroll - e.target.body.clientHeight) < 30 && api.status !== 'loading' && api.pageNumber !== -1){
+            if(document.querySelector('.cards').children.length < api.pageNumber*api.pageSize) return;
             api.status = Status.loading;
             this.props.getCards();
         }

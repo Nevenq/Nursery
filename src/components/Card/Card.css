@@ -1,10 +1,12 @@
 .card{
-    max-width: 240px;
+    width: 240px;
     max-height: 410px;
+    min-height: 350px;
     font-size: 24px;
     color: #555555;
     box-shadow: 0 0 9px rgba(0,0,0,.08);
     transition:.2s;
+    position: relative;
 }
 
 a{
@@ -34,6 +36,8 @@ a{
     margin-bottom: 17px;
 }
 .animal-data{
+    position: absolute;
+    bottom: 0;
     text-align: left;
     font-size: 18px;
     font-weight: 900;

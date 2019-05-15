@@ -2,28 +2,44 @@ import {cards} from "./Cards";
 import {store} from '../index'
 import {Status} from "../Constants";
 
-export default class Api{
-    constructor(config){
+export default class Api {
+    constructor(config) {
+        this.url = config;
         this.pageSize = 25;
-        this.pageNumber = 0
         this.status = Status.ready;
+        this.pageNumber = 1;
     }
 
-    getCards(){
-        this.pageNumber++;
-        return delay(2000).then(() => cards.slice(this.pageSize*(this.pageNumber - 1),this.pageSize*(this.pageNumber - 1) + this.pageSize))
+    getCards() {
+        return fetch(`${this.url}/animal`)
+            .then(response => response.json())
+            .then((cards) => cards.slice(this.pageSize * (this.pageNumber - 1), this.pageSize * (this.pageNumber - 1) + this.pageSize))
     }
-    filterCards(filter){
-        return delay(3000).then(() => cards.filter(card => card.id > 2))
+
+    filterCards(filter) {
+
     }
-    getCard(id){
-        const card = store.getState().cards.cards.find(card => card.id === Number(id));
-        if(card)
-            return Promise.resolve(card);
-        console.log(card);
-        return delay(500).then(() => cards.find(card => card.id === Number(id)))
+
+    getCard(id) {
+        return fetch(`${this.url}/animal/${id}`).then(response => response.json())
+    }
+
+    addCard(card) {
+        let a = JSON.stringify(card);
+        console.log(a);
+        return fetch(`${this.url}/animal`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: a
+        });
+    }
+
+    getFile(src) {
+        return fetch(`${this.url}/files/${src}`)
+            .then(response => response.url)
+
     }
 }
-function delay(time) {
-    return new Promise((resolve => setTimeout(resolve,time)))}
-

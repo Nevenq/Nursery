@@ -9,7 +9,8 @@ export default connect(
     }),
     (dispatch) => ({
         getInformation : (id) =>{
-            dispatch(() => api.getCard(id).then(card => dispatch(animalPageSuccess(card))));
+            dispatch(() => api.getCard(id)
+                .then(card => dispatch(animalPageSuccess(card))));
         }
 
     })

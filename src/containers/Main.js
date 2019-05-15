@@ -3,8 +3,9 @@ import {Main} from "../components/Main/Main";
 import {api} from "../index";
 import {requestCards, requestCardsSuccess} from "../actionCreators/actionCreators";
 import {Status} from "../Constants";
+import {withRouter} from "react-router";
 
-export default connect(
+export default withRouter(connect(
     null,
     (dispatch,props) => ({
         getCards : () =>{
@@ -21,4 +22,4 @@ export default connect(
             }))
         }
     })
-)(Main)
+)(Main))
