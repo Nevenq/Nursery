@@ -6,21 +6,26 @@ import $ from 'jquery'
 
 const Menu = () => {
     return (
-            <div className="menu">
-                <div className="container menu-container">
-                    <Link to="/"><img src={logo} alt="logo" className="logo"/></Link>
-                    <nav>
-                        <div className="menu-element"><Link to="/">Главная</Link></div>
-                        <div className="menu-element"><Link to="/about">О нас</Link></div>
-                        <div className="menu-element"><Link to="/rules">Правила</Link></div>
-                    </nav>
-                    <div className="anchor-form" onClick={handleClick}>Добавить животного</div>
+        <div className="menu">
+            <div className="container menu-container">
+                <Link to="/"><img src={logo} alt="logo" className="logo"/></Link>
+                <nav>
+                    <div className="menu-element"><Link to="/">Главная</Link></div>
+                    <div className="menu-element"><Link to="/about">О нас</Link></div>
+                    <div className="menu-element"><Link to="/rules">Правила</Link></div>
+                </nav>
+                <div className='icons'>
+                    <div className="anchor-form" onClick={handleClick}>+</div>
+                    <div className="anchor-login" onClick={handleClick}>
+                        <i className="far fa-user"></i>
+                    </div>
                 </div>
             </div>
+        </div>
     )
 };
-const handleClick = () =>{
-    $('.form').fadeIn(300,() => document.body.style.overflow = 'hidden');
+const handleClick = () => {
+    $('.form').fadeIn(300, () => document.body.style.overflow = 'hidden');
 
 
 }

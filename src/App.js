@@ -15,6 +15,8 @@ import AnimalPage from "./containers/AnimalPage";
 import Main from "./containers/Main";
 import {Status} from "./Constants";
 import AnimalForm from "./components/AnimalForm/AnimalForm";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +26,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        console.log(this.props);
         store.dispatch(requestCards());
         store.dispatch((dispatch) => api.getCards().then(cards => dispatch(requestCardsSuccess(cards))).then(api.status = Status.ready));
         window.addEventListener('scroll', this.handleScroll);
@@ -33,7 +35,7 @@ class App extends Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('scroll', this.handleScroll);
         document.querySelector('.anchor').removeEventListener('click',this.handleClick)
     }
 
@@ -87,6 +89,8 @@ class App extends Component {
                     </div>
                 </footer>
                 <AnimalForm/>
+                <RegistrationForm/>
+                <LoginForm/>
             </div>
         );
     }
