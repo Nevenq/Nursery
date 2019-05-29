@@ -46,7 +46,7 @@ export default class Api {
     login(user) {
         return fetch(`${this.url}/account/login`, {
             method: 'POST',
-            credentials: "same-origin",
+            credentials: "include",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json-patch+json'

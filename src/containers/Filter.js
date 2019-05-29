@@ -32,7 +32,7 @@ export default withRouter(connect(
             dispatch(requestCards());
             props.history.push('/');
             //const a = JSON.stringify(value.reduce((a,b) => ({...a,[b[0]]:b[1]}),{})).then(cards => dispatch(filterCardsSuccess(cards))).then(dispatch(submitFilter()));
-            let filters = {kinds:{cats:[...value.cats]}}
+            let filters = {kinds:{cats:[...value.cats]}};
             console.log(value.filter(arr => arr[1].length !== 0).reduce((a,b) => ({...a,[b[0]]:b[1]}),{}));
             if(value.length > 0){
                 dispatch(() => api.filterCards());
