@@ -11,9 +11,13 @@ class AnimalForm extends Component {
             kinds: animal.cats,
             name: '',
             animalType: animal.cats[0],
+            kind: '',
             years: 0,
             months: 0,
             description: '',
+            sterilization: '',
+            vaccination : '',
+            passport: '',
             sex: 0,
             files: [
                 {
@@ -38,7 +42,7 @@ class AnimalForm extends Component {
         })) {
             const state = this.state;
             const date = new Date()
-            const bDate = new Date(date.getFullYear() - (date.getFullYear() - state.years), date.getMonth() + 1 - (date.getMonth() + 1 - state.months));
+            const bDate = new Date(date.getFullYear() - (date.getFullYear() - (date.getFullYear() - state.years)), date.getMonth() + 1 - (date.getMonth() + 1 - (date.getMonth() + 1 - state.months)));
             console.log(bDate)
             api.addCard({name : state.name, animalType : state.animalType, bDate: bDate,description: state.description,sex:state.sex,files:state.files}).then(() =>{
                 $('.form').fadeOut(300)
@@ -96,7 +100,6 @@ class AnimalForm extends Component {
     handleChange = (e)=>{
         let name = e.target.name;
         let value = e.target.value;
-        console.log(this.state)
         this.setState({[name] : value})
     }
     setFocus = () =>{
@@ -126,7 +129,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor="selectAnimalType">Категория</label>
                                     <div className="input">
-                                        <select name="animalType" id="selectAnimalType" required={true}
+                                        <select name="animalType" id="selectAnimalType" value={this.state.animalType} required={true}
                                                 onChange={(e) =>{this.getKind(e);this.handleChange(e)}}>
                                             {['Кошка', 'Собака', 'Грызун', 'Птица', 'Рептилия, амфибия', 'Другое'].map(v =>
                                                 <option
@@ -137,7 +140,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor="selectKind">Вид/Порода</label>
                                     <div className="input">
-                                        <select name="animalType" id="selectKind" required={true} onChange={this.handleChange}>
+                                        <select name="kind" id="selectKind" value={this.state.kind}  required={true} onChange={this.handleChange}>
                                             {this.state.kinds.map(v => <option value={v}>{v}</option>)}
                                         </select>
                                     </div>
@@ -145,15 +148,15 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor='formName'>Кличка</label>
                                     <div className="input">
-                                        <input type="text" name='name' id='formName' required={true} onChange={this.handleChange}/>
+                                        <input type="text" name='name' id='formName' value={this.state.name} required={true} onChange={this.handleChange}/>
                                     </div>
                                 </div>
                                 <div className="input-container">
                                     <label htmlFor='Years'>Примерная дата рождения</label>
                                     <div className="input" id='Age'>
-                                        <input type="number" name='years' id='Years' required={true} min={0} onChange={this.handleChange}/>
+                                        <input type="number" name='years' id='Years' required={true} value={this.state.years} min={0} onChange={this.handleChange}/>
                                         <p>г.</p>
-                                        <input type="number" name='months' id='Months' required={true} min={0} max={11} onChange={this.handleChange}/>
+                                        <input type="number" name='months' id='Months' required={true} value={this.state.months} min={0} max={11} onChange={this.handleChange}/>
                                         <p>мес.</p>
                                     </div>
                                 </div>
@@ -162,7 +165,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor='Sex'>Пол</label>
                                     <div className="input">
-                                        <select name="sex" id="Sex" onChange={this.handleChange}>
+                                        <select name="sex" id="Sex" value={this.state.sex} onChange={this.handleChange}>
                                             <option value="0">Мальчик</option>
                                             <option value="1">Девочка</option>
                                         </select>
@@ -171,7 +174,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor='Sterilization'>Стерилизация</label>
                                     <div className="input">
-                                        <select name="sterilization" id="Sterilization" onChange={this.handleChange}>
+                                        <select name="sterilization" id="Sterilization" value={this.state.sterilization} onChange={this.handleChange}>
                                             <option value="1">Да</option>
                                             <option value="">Нет</option>
                                         </select>
@@ -180,7 +183,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor='Vaccination'>Прививки</label>
                                     <div className="input">
-                                        <select name="vaccination" id="Vaccination" onChange={this.handleChange}>
+                                        <select name="vaccination" id="Vaccination" value={this.state.vaccination} onChange={this.handleChange}>
                                             <option value="1">Есть</option>
                                             <option value="">Нет</option>
                                         </select>
@@ -189,7 +192,7 @@ class AnimalForm extends Component {
                                 <div className="input-container">
                                     <label htmlFor='Passport'>Вет.паспорт</label>
                                     <div className="input">
-                                        <select name="passport" id="Passport">
+                                        <select name="passport" id="Passport" value={this.state.passport} onChange={this.handleChange}>
                                             <option value="1">Есть</option>
                                             <option value="">Нет</option>
                                         </select>
@@ -200,7 +203,7 @@ class AnimalForm extends Component {
                         <div className="input-container">
                             <label htmlFor="formDesc">Описание</label>
                             <div className="input">
-                                <textarea name="description" id="formDesc" cols="30" rows="10" onChange={this.handleChange}/>
+                                <textarea name="description" id="formDesc" cols="30" rows="10" value={this.state.description} onChange={this.handleChange}/>
                             </div>
                         </div>
 

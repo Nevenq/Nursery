@@ -35,6 +35,7 @@ export default class Api {
         console.log(a);
         return fetch(`${this.url}/animal`, {
             method: 'POST',
+            credentials:"include",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

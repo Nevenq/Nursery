@@ -15,8 +15,8 @@ const Menu = () => {
                     <div className="menu-element"><Link to="/rules">Правила</Link></div>
                 </nav>
                 <div className='icons'>
-                    <div className="anchor-form" onClick={formHandleClick} style={getDisplay()} title={'Добавить животного'}>+</div>
-                    <div className="anchor-login" onClick={loginHandleClick} title={'Войти'} >
+                    <div className="anchor-form" onClick={formHandleClick} style={{display : getDisplay() ? "initial" : "none"}} title={'Добавить животного'}>+</div>
+                    <div className="anchor-login" onClick={loginHandleClick} style={{display:!getDisplay() ? "initial" : "none"}} title={'Войти'} >
                         <i className="fa fa-user-o" aria-hidden="true" />
                     </div>
                 </div>
@@ -29,8 +29,7 @@ const formHandleClick = () => {
 
 }
 const getDisplay = () =>{
-    return document.cookie.indexOf('authed=yes') !== -1 ? {display:"initial"} : {display:"none"}
-
+    return document.cookie.indexOf('authed=yes') !== -1;
 };
 const loginHandleClick = () => {
     $('.loginForm').fadeIn(300, () => document.body.style.overflow = 'hidden');

@@ -12,9 +12,6 @@ export default connect(
     (dispatch,props) => ({
         getInformation : (id) =>{
             dispatch(() => api.getCard(id)
-                .then(ar =>{
-                    console.log(ar);
-                })
                 .then(card => dispatch(animalPageSuccess(card))))
 
         }

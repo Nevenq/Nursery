@@ -40,6 +40,7 @@ const makeSex = (sex) => {
 
 };
 const makeAge = (bDate) =>{
+    console.log(bDate)
     let birthDate = new Date(bDate);
     let diffDate = new Date() - birthDate;
     let day = diffDate/1000/60/60/24;

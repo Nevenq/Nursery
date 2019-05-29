@@ -13,7 +13,8 @@ export class AnimalPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getInformation(this.props.match.params.id)
+        this.props.getInformation(this.props.match.params.id);
+        console.log(this.props);
 
     }
     componentDidCatch(err,info){
