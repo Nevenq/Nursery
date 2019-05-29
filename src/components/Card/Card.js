@@ -43,7 +43,6 @@ const makeAge = (bDate) =>{
     let birthDate = new Date(bDate);
     let diffDate = new Date() - birthDate;
     let day = diffDate/1000/60/60/24;
-    console.log(day)
     let year = parseInt(day/365);
     day -=year*365;
     let month = parseInt(day/28);
@@ -51,8 +50,7 @@ const makeAge = (bDate) =>{
     let strYear = year >= 1 ? `${year} год ` : '';
     let strMonth = month > 0 ? `${month} мес. `: '';
     let strDay = day > 0 ? `${day} дн. ` : '';
-    console.log(day)
-    if(!strYear && !strMonth) return 'Не указан'
+    if(!strYear && !strMonth) return 'Не указан';
     return strYear + strMonth;
 
 };

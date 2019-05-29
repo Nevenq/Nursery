@@ -26,7 +26,8 @@ export default class Api {
     getCard(id) {
         return fetch(`${this.url}/animal/${id}`)
             .then(response => response.json())
-            .catch(err => {})
+            .catch(err => {
+            })
     }
 
     addCard(card) {
@@ -42,9 +43,26 @@ export default class Api {
         });
     }
 
-    getFile(src) {
-        return fetch(`${this.url}/files/${src}`)
-            .then(response => response.url)
+    login(user) {
+        return fetch(`${this.url}/account/login`, {
+            method: 'POST',
+            credentials: "same-origin",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json-patch+json'
+            },
+            body: JSON.stringify(user),
+        })
+    }
 
+    register(user) {
+        return fetch(`${this.url}/account/register`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user),
+        })
     }
 }

@@ -123,7 +123,7 @@ const Filter = ({filters = [], handleChange, selected, handleReset, handleSubmit
 
             <input type="button" value='Сбросить' className='button reset' onClick={handleReset}/>
             <input type="submit" value='Показать' className='button submit'
-                   /*onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}*//>
+                   onClick={() => changed && handleSubmit(Object.entries(selected).filter(elem => elem[1] !== ''))}/>
         </div>);
 }
 const handleSelect = (e) => {

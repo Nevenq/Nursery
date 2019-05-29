@@ -56,15 +56,15 @@ export class AnimalPage extends React.Component {
                         </div>
                         <div className="animal-stat">
                             <div className="stats-label">Стерилизация:</div>
-                            <div className="stats-value">{animal.sterilization || 'не указано'}</div>
+                            <div className="stats-value">{animal.sterilization ? 'Есть' : 'Нет'}</div>
                         </div>
                         <div className="animal-stat">
                             <div className="stats-label">Прививки:</div>
-                            <div className="stats-value">{animal.vaccination || 'не указано'}</div>
+                            <div className="stats-value">{animal.vaccination ? 'Есть' : 'Нет'}</div>
                         </div>
                         <div className="animal-stat">
                             <div className="stats-label">Вет. паспорт:</div>
-                            <div className="stats-value">{animal.passport || 'не указано'}</div>
+                            <div className="stats-value">{animal.passport ? 'Есть' : 'Нет'}</div>
                         </div>
                     </div>
                     <div className="contact-info">

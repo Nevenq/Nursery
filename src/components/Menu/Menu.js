@@ -15,17 +15,23 @@ const Menu = () => {
                     <div className="menu-element"><Link to="/rules">Правила</Link></div>
                 </nav>
                 <div className='icons'>
-                    <div className="anchor-form" onClick={handleClick}>+</div>
-                    <div className="anchor-login" onClick={handleClick}>
-                        <i className="far fa-user"></i>
+                    <div className="anchor-form" onClick={formHandleClick} title={'Добавить животного'}>+</div>
+                    <div className="anchor-login" onClick={loginHandleClick} title={'Войти'} >
+                        {console.log(document.cookie)}
+                        <i className="fa fa-user-o" aria-hidden="true" />
                     </div>
                 </div>
             </div>
         </div>
     )
 };
-const handleClick = () => {
+const formHandleClick = () => {
     $('.form').fadeIn(300, () => document.body.style.overflow = 'hidden');
+
+
+}
+const loginHandleClick = () => {
+    $('.loginForm').fadeIn(300, () => document.body.style.overflow = 'hidden');
 
 
 }
